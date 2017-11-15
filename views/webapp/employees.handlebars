@@ -1,0 +1,81 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <!-- DataTable Card-->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-table"></i> List of Employees
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="employeeTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Mobile</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Mobile</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              {{#each users}}
+              <tr>
+                <td>{{firstName}} {{surname}}</td>
+                <td>{{email}}</td>
+                <td>{{position}}</td>
+                <td>0{{mobile}}</td>
+                <td>
+                  <a class="btn btn-dark" style="background-color:#2bcf18" href="/webapp/editemployees/{{id}}">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                </td>
+                <td>
+                  <form method="post" action="/users/{{id}}?_method=DELETE">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger">
+                      <i class="fa fa-trash-o"></i>
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              {{else}}
+              <tr>
+                <td>
+                  <p>No users created</p>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer">
+          <a class="btn btn-light" style="border-color: #000000" href="/webapp/addEmployee/">Add New Employee</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="js/sb-admin-datatables.min.js"></script>

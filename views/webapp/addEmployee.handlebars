@@ -1,0 +1,85 @@
+<div class="container">
+  <form class="form-horizontal" action="/webapp/addNewEmployee" method="post">
+    <h2 class="col-sm-5">Add a new employee</h2>
+    <div class="form-group">
+      <label for="firstName" class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-6">
+        <input type="text" name="firstName" placeholder="John" class="form-control" autofocus required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="surname" class="col-sm-2 control-label">Surname</label>
+      <div class="col-sm-6">
+        <input type="text" name="surname" placeholder="Doe" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="company" class="col-sm-2 control-label">Company</label>
+      <div class="col-sm-6">
+        <input type="text" name="company" class="form-control" value="{{user.company}}" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-6">
+        <input type="email" name="email" placeholder="johndoe@company.com" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-6">
+        <input type="password" name="password" placeholder="Password" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password2" class="col-sm-2 control-label">Confirm Password</label>
+      <div class="col-sm-6">
+        <input type="password" name="password2" placeholder="Confirm Password" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mobile" class="col-sm-2 control-label">Mobile Number</label>
+      <div class="col-sm-6">
+        <input type="number" name="mobile" placeholder="0871234567" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address" class="col-sm-2 control-label">Address</label>
+      <div class="col-sm-6">
+        <input type="text" name="address" placeholder="Address" class="form-control" value="{{users.address}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="dob" class="col-sm-2 control-label">Date of birth</label>
+      <div class="col-sm-6">
+        <input type="date" name="dob" class="form-control" value="{{users.dob}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="position" class="col-sm-2 control-label">Position</label>
+      <div class="col-sm-6">
+        <input type="text" name="position" placeholder="Waiter" class="form-control" value="{{users.position}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="admin" class="col-sm-2 control-label">Admin</label>
+      <label class="form-group-label">
+        <input class="form-group-input" type="checkbox" name="admin" value="{{users.admin}}">
+        Yes
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="admin" class="col-sm-2 control-label">Schedule Manager</label>
+      <label class="form-group-label">
+        <input class="form-group-input" type="checkbox" name="scheduleManager" value="{{users.scheduleManager}}">
+        Yes
+      </label>
+    </div>
+    <!-- /.form-group -->
+    <div class="form-group">
+      <div class="col-sm-6 col-sm-offset-3">
+        <button type="submit" class="btn btn-light" style="border-color: #000000">Add employee</button>
+      </div>
+    </div>
+  </form>
+</div>
